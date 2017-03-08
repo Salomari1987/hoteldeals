@@ -7,8 +7,11 @@ require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
 
 // start listening to requests on port 8000
-app.listen(8000, function () {
+var server = app.listen(8000, function () {
 	console.log("Listening on port 8000")
 });
 
-module.exports = app;
+module.exports = {
+	app: app,
+	server: server
+}
