@@ -27,9 +27,7 @@ describe('Services', function () {
 			.expect(200)
 			.expect(function(res){
 				expect(res.body).to.be.a('object')
-				console.log(res.body)
 				expect(Object.keys(res.body)).to.deep.equal(["offerInfo", "userInfo", "offers"])
-
 			})
 			.end(done)
 		}).timeout(3000)

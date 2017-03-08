@@ -1,14 +1,8 @@
 var helpers = require('./helpers.js'); // our custom middleware
-var request = require('request')
-var hotelsSvc = require('../services/hotelsSvc.js')
+var apiController = require('../controllers/apiController')
+
 module.exports = function (app, express) {
-  app.get('/1', function (req, res) {
-    console.log(1111)
-    hotelsSvc.getAll({}, function (err, resp, data){
-      console.log(resp.statusCode)
-      res.status(200).send(data)
-    })
-  })
+  app.get('/1', apiController.getAll)
 
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
