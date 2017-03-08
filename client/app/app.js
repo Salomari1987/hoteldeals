@@ -1,1 +1,3 @@
-angular.module('hoteldeals', [])
+angular.module('hoteldeals', [
+    'ui.router',
+  ])
