@@ -1,3 +1,4 @@
+// Define states
 var states = [{ 
 	name: 'index', 
   	state: { 
@@ -9,6 +10,7 @@ var states = [{
 
 angular.module('hoteldeals', [
   'ui.router',
+  'ui.bootstrap',
   'hoteldeals.services',
 	'hoteldeals.list'
   ])
@@ -19,5 +21,24 @@ angular.module('hoteldeals', [
   angular.forEach(states, function (state) {
     $stateProvider.state(state.name, state.state);
   });
-  
+
+  $httpProvider.interceptors.push('AttachHeaders');
+})
+
+.factory('AttachHeaders', function ($window) {
+
+  var attach = {
+    request: function (config) {
+      if (config.url.startsWith('template/') || config.url.startsWith('uib/')) {
+        // Not modifying requests to these urls, 
+        // as they are angular template cache requests
+        return config;
+      } else {
+        config.params = config.params || {};
+        config.headers['Allow-Control-Allow-Origin'] = '*';
+        return config;
+      }
+    }
+  };
+  return attach;
 })

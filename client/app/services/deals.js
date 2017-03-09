@@ -5,6 +5,18 @@ angular.module('hoteldeals.services', [])
   
   var getAll = function () {
     // Send GET http request to fetch all deals from backend
+    return $http({
+      method: 'GET',
+      url: '/api/deals'
+    })
+    .then(function (resp) {
+      // return http response body to controller
+      return resp.data;
+    })
+    .catch(function (err) {
+      // if error is sent back by API, log it in console
+      console.log(err);
+    });
   };
 
   var getFiltered = function () {

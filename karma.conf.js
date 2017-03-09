@@ -16,8 +16,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'client/lib/angular/angular.js',
-      'client/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'client/lib/angular-ui-router/release/angular-ui-router.min.js',
+      'client/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'client/lib/angular-mocks/angular-mocks.js',
       'client/app/**/*.js',
       'specs/client/**/*.js'

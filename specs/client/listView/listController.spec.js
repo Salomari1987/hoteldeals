@@ -7,7 +7,7 @@ describe('ListController', function() {
     $rootScope = _$rootScope_;
   	$scope = _$rootScope_.$new();
     ListController = $controller('ListController', {
-        $rootScope: $rootScope, 
+      $rootScope: $rootScope, 
     	$scope: $scope
     });
 	}));

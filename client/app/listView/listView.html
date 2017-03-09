@@ -1,1 +1,52 @@
-<div><h1> hello world <h1></div>
+<div class="container-fluid" class="col-xs-12">
+	<div id={{offer.hotelInfo.hotelId}} class="row" ng-repeat="offer in data.offers" style="border:grey solid 1px; margin:10px; background-color:white;">
+		<div class="col-xs-2 thumbnail-offer" style="background-image:url({{offer.hotelInfo.hotelImageUrl}});">
+			<div class="caption caption-ribbon" ng-if='offer.hotelInfo.promotionDescription!==""' style="">
+				{{offer.hotelInfo.promotionDescription}}
+			</div>
+		</div>
+		<div class="col-xs-5 description-offer">
+			<ul class="no-bullets">
+				<li>
+					<span class="h3"><a href="http://expedia.com/{{offer.hotelUrgencyInfo.link}}"> 
+						{{offer.hotelInfo.hotelName}}
+					</a></span> <span class="p"> in {{offer.hotelInfo.hotelCity}}/{{offer.hotelInfo.hotelCountryCode}} </span>
+				</li>
+				<li>
+					<p>
+						{{offer.hotelInfo.hotelStreetAddress}}
+					</p>
+				</li>
+				<li style="padding:10px;">
+					<span><i style="max-width:50%"><i class="fa fa-comment-o"></i> {{offer.hotelInfo.description}}</i></span>
+				</li>
+				<li>
+					<span style="color:#800000"> {{offer.hotelUrgencyInfo.numberOfPeopleBooked}} people booked in this hotel in the past 48 hours </span>
+				</li>
+				<li>
+					<span style="color:#800000"> {{offer.hotelUrgencyInfo.numberOfPeopleViewing}} people viewed this hotel in the past 48 hours </span>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-5 description-offer">
+			<ul class="text-right no-bullets">
+				
+				<li class="h4 a" style="color:#0065b8">
+					{{starRating(offer.hotelInfo.hotelStarRating)}} {{offer.hotelInfo.hotelStarRating}}/5
+				</li>
+				<li>
+					<span ng-if='offer.hotelUrgencyInfo.almostSoldStatus==="ALMOST_SOLD"' style="color:#d60000"> In high demand, almost sold </span>
+					<span ng-if='offer.hotelUrgencyInfo.almostSoldStatus==="AVAILABLE"' style="color:green"> Available </span>
+				</li>
+				<li class="h3">
+					<span ng-if='offer.hotelPricingInfo.percentSavings > 0' style="text-decoration: line-through; color:grey;">${{offer.hotelPricingInfo.originalPricePerNight}}</span>
+					<span style="color:#d60000"> ${{offer.hotelPricingInfo.averagePriceValue}}</span>
+				</li>
+				<li>
+					avg/night
+				</li>
+
+			</ul>
+		</div>
+  	</div>
+</div>
