@@ -1,7 +1,9 @@
 # Hotel Deals WebApp #
 
 [Heroku Link](https://hotelsdeals.herokuapp.com) or https://hotelsdeals.herokuapp.com
-[Travis CI](https://travis-ci.org/Salomari1987/hoteldeals/builds/)
+
+[Travis CI](https://travis-ci.org/Salomari1987/hoteldeals/builds/) or https://travis-ci.org/Salomari1987/hoteldeals/builds/
+
 ## Hotel Deals Display and Filter Portal ##
 
 ## Start the app (Instructions)
