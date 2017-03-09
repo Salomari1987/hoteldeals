@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "gulp mocha",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "lint": "eslint ./"
   },
   "repository": {
     "type": "git",
