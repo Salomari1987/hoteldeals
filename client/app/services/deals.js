@@ -19,8 +19,21 @@ angular.module('hoteldeals.services', [])
     });
   };
 
-  var getFiltered = function () {
+  var getFiltered = function (data) {
     // Send GET http request to fetch a filtered list from backend
+    return $http({
+      method: 'POST',
+      url: '/api/deals',
+      data: {
+        filters:data
+      }
+    })
+    .then(function (resp) {
+      return resp.data;
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
   };
 
   return {

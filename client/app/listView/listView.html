@@ -1,6 +1,12 @@
 <div class="container-fluid" class="col-xs-12">
+	<div ng-if="data.offers===undefined">
+		<h1>No Deals to Show</h1>
+	</div>
+	<div ng-if="data.offers===0">
+		<h1> Searching ...</h1>
+	</div>
 	<div id={{offer.hotelInfo.hotelId}} class="row" ng-repeat="offer in data.offers" style="border:grey solid 1px; margin:10px; background-color:white;">
-		<div class="col-xs-2 thumbnail-offer" style="background-image:url({{offer.hotelInfo.hotelImageUrl}});">
+		<div class="col-xs-3 thumbnail-offer" style="background-image:url({{offer.hotelInfo.hotelImageUrl}});">
 			<div class="caption caption-ribbon" ng-if='offer.hotelInfo.promotionDescription!==""' style="">
 				{{offer.hotelInfo.promotionDescription}}
 			</div>
@@ -28,7 +34,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col-xs-5 description-offer">
+		<div class="col-xs-4 description-offer">
 			<ul class="text-right no-bullets">
 				
 				<li class="h4 a" style="color:#0065b8">

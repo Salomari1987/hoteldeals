@@ -1,12 +1,21 @@
 angular.module('hoteldeals.list', [])
 .controller('ListController',
   function ($scope, $rootScope, Deals) {
-  	$scope.data = {}
-    Deals.getAll()
-    .then(function (resp) {
-    	console.log(resp.offers)
-    	$scope.data.offers = resp.offers.Hotel
-    })
+  	$rootScope.data = {
+      offers: 0
+    }
+    if (!$rootScope.data.offers) {
+      Deals.getAll()
+      .then(function (resp) {
+        console.log(resp.offers)
+        $rootScope.data.offers = resp.offers.Hotel
+      })
+    }
+    $scope.$watch(function() {
+      return $rootScope.data.offers;
+    }, function() {
+      $scope.data.offers = $rootScope.data.offers;
+    }, true);
   	$scope.starRating = function (rating) {
   		rating = parseFloat(rating)
   		if (rating > 4.5) {

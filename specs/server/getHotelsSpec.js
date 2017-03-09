@@ -46,7 +46,7 @@ describe('Services', function () {
 		});
 		it('should call api with filtered results and return reponse', function (done) {
 			request(app)
-			.get('/api/deals')
+			.post('/api/deals')
 			.send({
 				filters: {
 					destinationName:"Florence",
@@ -64,7 +64,7 @@ describe('Services', function () {
 
 		it('should call api with filtered results and return filtered reponse', function (done) {
 			request(app)
-			.get('/api/deals')
+			.post('/api/deals')
 			.send({
 				filters: {
 					destinationName:"Florence"
