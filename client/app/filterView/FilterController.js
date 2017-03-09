@@ -8,7 +8,6 @@ angular.module('hoteldeals.filter', [])
     $scope.submit = function () {
       Deals.getFiltered($scope.data)
       .then(function (resp) {
-        console.log(resp)
         $rootScope.data.offers = resp.offers.Hotel
         $location.path('/reload')
       })
