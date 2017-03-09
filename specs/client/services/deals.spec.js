@@ -53,7 +53,8 @@ describe('services', function () {
 		        // Declare the endpoint we expect our service to hit and provide it with our mocked return values
 		        $httpBackend.when('GET', API).respond(RESPONSE_SUCCESS);
 		        $httpBackend.when('GET', 'app/listView/listView.html').respond(RESPONSE_SUCCESS);
-		        
+		        $httpBackend.when('GET', 'app/filterView/filterView.html').respond(RESPONSE_SUCCESS);
+
 		        expect(Deals.getAll).not.toHaveBeenCalled();
 		        expect(result).toEqual({});
 

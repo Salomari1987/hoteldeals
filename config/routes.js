@@ -3,6 +3,7 @@ var apiController = require('../controllers/apiController')
 
 module.exports = function (app, express) {
   app.get('/api/deals', apiController.getAll)
+  app.post('/api/deals', apiController.getAll)
 
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
