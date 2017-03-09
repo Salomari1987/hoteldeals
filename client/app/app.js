@@ -29,15 +29,9 @@ angular.module('hoteldeals', [
 
   var attach = {
     request: function (config) {
-      if (config.url.startsWith('template/') || config.url.startsWith('uib/')) {
-        // Not modifying requests to these urls, 
-        // as they are angular template cache requests
-        return config;
-      } else {
         config.params = config.params || {};
         config.headers['Allow-Control-Allow-Origin'] = '*';
         return config;
-      }
     }
   };
   return attach;
