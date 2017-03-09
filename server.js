@@ -15,18 +15,18 @@ app.listen(PORT, function () {
 });
 
 app.on ( 'uncaughtException', function () {
-  //Close connection
-  server.close();
+	//Close connection
+	server.close();
 });
 
 // On kill
 app.on('SIGTERM', function() {
-  server.close();
+	server.close();
 });
 
 //On exit
 app.on('exit', function() {
-  server.close();
+	server.close();
 });
 
 module.exports = {

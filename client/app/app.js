@@ -1,20 +1,20 @@
 // Define states
 var states = [{ 
-	name: 'index', 
-  	state: { 
-  		url: '/hotels', 
-      views: {
-        'list': {
-      		templateUrl: 'app/listView/listView.html', 
-      		controller: 'ListController'
-        },
-        'filter': {
-          templateUrl: 'app/filterView/filterView.html',
-          controller: 'FilterController'
-        }
+  name: 'index', 
+  state: { 
+    url: '/hotels', 
+    views: {
+      'list': {
+        templateUrl: 'app/listView/listView.html', 
+        controller: 'ListController'
+      },
+      'filter': {
+        templateUrl: 'app/filterView/filterView.html',
+        controller: 'FilterController'
       }
-  	}
-  }]
+    }
+  }
+}]
 
 angular.module('hoteldeals', [
   'ui.router',
@@ -38,9 +38,9 @@ angular.module('hoteldeals', [
 
   var attach = {
     request: function (config) {
-        config.params = config.params || {};
-        config.headers['Allow-Control-Allow-Origin'] = '*';
-        return config;
+      config.params = config.params || {};
+      config.headers['Allow-Control-Allow-Origin'] = '*';
+      return config;
     }
   };
   return attach;

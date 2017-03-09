@@ -43,7 +43,6 @@ describe('FilterController', function() {
   	
   	scope.$apply();
   	
-
   	scope.submit()
 
   	expect(Deals.getFiltered).toHaveBeenCalledWith(scope.data);

@@ -33,7 +33,9 @@ describe('Services', function () {
 			})
 			.end(done)
 		}).timeout(5000)
-	})
+	});
+
+
 	describe('GetFiltered', function () {
 		var server, app
 		beforeEach(function () {
@@ -84,7 +86,5 @@ describe('Services', function () {
 			})
 			.end(done)
 		}).timeout(5000)
-
 	})
-
 })

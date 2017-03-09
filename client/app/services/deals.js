@@ -37,7 +37,7 @@ angular.module('hoteldeals.services', [])
   };
 
   return {
-  	getAll: getAll,
-  	getFiltered: getFiltered
+    getAll: getAll,
+    getFiltered: getFiltered
   }
 })
